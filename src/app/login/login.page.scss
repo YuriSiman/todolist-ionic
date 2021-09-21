@@ -18,3 +18,14 @@
 .btn-login{
   background-color: #3B2D59;
 }
+
+.container-login{
+  margin: 9px;
+  border: #CCC solid 1px;
+  box-shadow: 1px 2px 10px rgb(1, 1, 1, 0.4);
+  background-color : #FFFFFF;
+}
+
+ion-content{
+  --background : #F0F4FD;
+}

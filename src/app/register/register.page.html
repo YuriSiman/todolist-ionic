@@ -6,15 +6,13 @@
 
 <ion-content>
 
-  <div class="container container-login">
-    <ion-grid class="grid-login">
+  <div class="container container-register">
+    <ion-grid class="grid-register">
       <ion-row className="ion-align-items-center">
-        <ion-col class="title-login">
-          <strong class="title-login-todo">Todo</strong><strong class="title-login-list">List</strong>
+        <ion-col class="title-register">
+          <strong class="title-register-todo">Registro</strong>
         </ion-col>
-        <ion-col>
-          <img src="assets/todo-list-img.png" alt="" class="ml-3" class="img-fluid" class="rounded float-left">
-        </ion-col>
+       
       </ion-row>
 
       <ion-row class="ion-margin-top">
@@ -27,13 +25,16 @@
             <ion-label position="floating">Senha</ion-label>
             <ion-input type="password" name="password"></ion-input>
           </ion-item>
+          <ion-item>
+            <ion-label position="floating">Confirmar Senha</ion-label>
+            <ion-input type="password" name="confirm-password"></ion-input>
+          </ion-item>
         </ion-col>
       </ion-row>
 
       <ion-row class="ion-margin-top">
         <ion-col>
-          <ion-button type="button" color="#3B2D59" class="btn-login" expand="full" [routerLink]="['/home']" routerLinkActive="router-link-active" >Login</ion-button>
-          <ion-button type="button" color="#3B2D59"  class="btn-login" expand="full" [routerLink]="['/register']" routerLinkActive="router-link-active">Registro</ion-button>
+          <ion-button type="button" color="#3B2D59" class="btn-register" expand="full" [routerLink]="['/login']" routerLinkActive="router-link-active" >Registrar</ion-button>
         </ion-col>
       </ion-row>
 
