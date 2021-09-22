@@ -12,6 +12,7 @@ export class HomePage implements OnInit {
 
   public todoList: Array<Task> = [];
 
+  today: number = Date.now();
 
   constructor(public modalCtlr: ModalController, public todoService:TodoService) { 
     this.getAllTask()
