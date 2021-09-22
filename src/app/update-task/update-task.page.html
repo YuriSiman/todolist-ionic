@@ -4,19 +4,12 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Adicionar Nova task</ion-title>
-    <!-- <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="dismis()"></ion-icon> -->
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content >
   <ion-card class="ion-align-self-center" >
-
-    <!-- <ion-item>
-      <ion-label position="stack">ID</ion-label>
-      <ion-input type="text" name="id"  [ngModel]="task.id" readonly>
-      </ion-input>
-    </ion-item> -->
 
     <ion-item>
       <ion-textarea name="name" [(ngModel)]="task.name"  placeholder="Digite sua tarefa aqui"></ion-textarea>
@@ -52,18 +45,9 @@
       <ion-icon slot="icon-only" name="add-outline"></ion-icon>
     </ion-button>
  
-     <!-- <ion-chip color="primary" outline="true">
-       <ion-label color="secondary">novo</ion-label>
-       <ion-button fill="clear">
-         <ion-icon slot="icon-only" name="add-outline"></ion-icon>
-       </ion-button>
-     </ion-chip> -->
    </ion-item>
 
    <ion-button class="ion-margin" expand="block" (click)="update()">Atualizar Task</ion-button>
-
   </ion-card>
- 
-
 
 </ion-content>

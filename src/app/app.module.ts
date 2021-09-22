@@ -15,8 +15,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot()],
   providers: [
-    // StatusBar,
-    // SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

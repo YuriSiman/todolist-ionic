@@ -1,13 +1,14 @@
 ion-content{
-    --background : #F0F4FD;
-  
-    p{
-     font-weight: 300;
-    }
+  --background : #F0F4FD;
+
+  p{
+   font-weight: 300;
   }
-  
+}
+
 .title-historic{
+  margin-bottom: 10px;
+  text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: 38px;
-  margin-left: 30px;
+  font-size: 28px;
 }
