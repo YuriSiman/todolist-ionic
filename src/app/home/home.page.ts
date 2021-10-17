@@ -19,17 +19,49 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.todoList = this.todoService.getAllTasks();
-    // console.log(this.pecasService.getAll());
-  }
+    this.todoService.getAllTasks().subscribe( (tasks)=> {
+ 
+     this.todoList = tasks.map((obj)=> {
+       const idDocumento = obj.payload.doc.id;
+       const dados = obj.payload.doc.data();
+ 
+       return {
+        id: idDocumento,
+        name: dados['name'],
+        date: dados['date'],
+        priority: dados['priority'],
+        category: dados['category'],
+        status: dados['status']
+       };
+     });
+    });
+   }
 
   getAllTask(){
-    this.todoList = this.todoService.getAllTasks()
-    console.log(this.todoService.getAllTasks());
+    this.todoService.getAllTasks().subscribe( (tasks)=> {
+ 
+      this.todoList = tasks.map((obj)=> {
+        const idDocumento = obj.payload.doc.id;
+        const dados = obj.payload.doc.data();
+  
+        return {
+         id: idDocumento,
+         name: dados['name'],
+         date: dados['date'],
+         priority: dados['priority'],
+         category: dados['category'],
+         status: dados['status']
+        };
+      });
+     });
   }
 
    delete(id) { 
-    this.todoService.deleteTask(id)
+    if (id || id === '') {
+      this.todoService.deleteTask(id).then((result)=>{
+        console.log(result);
+      });
+    }
     this.getAllTask()
   }
 }

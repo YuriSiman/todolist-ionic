@@ -23,8 +23,13 @@ export class AddNewTaskPage implements OnInit {
 
   public add() {
     if (this.task.name !== null && this.task.name !== undefined) {
-      this.todoService.addTask(this.task);
-      this.rota.navigate(['/home']);
+      this.todoService.addTask(this.task).then( (result)=> {
+        console.log(result);
+
+        this.rota.navigate(['/home']);
+      }).catch( (error)=> {
+        console.log(error);
+      });
     }
   }
 

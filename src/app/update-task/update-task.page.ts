@@ -17,16 +17,20 @@ export class UpdateTaskPage implements OnInit {
               private rota: Router) {}
 
   ngOnInit() {
-    const id = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
-    this.task = this.todoService.get(id);
+    const id = this.rotaAtiva.snapshot.paramMap.get('id');
+    this.todoService.get(id).then((task)=>{
+      this.task = task;
+    });
     this.categories.push('Pessoal')
     this.categories.push('Trabalho')
     this.categories.push('Estudos')
   }
 
   public update() {
-    this.todoService.updateTask(this.task);
-    this.rota.navigate(['/home']);
+    this.todoService.updateTask(this.task).then((result)=>{
+      console.log(result);
+      this.rota.navigate(['/home']);
+    });
   }
 
   categories =[]

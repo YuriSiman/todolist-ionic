@@ -1,5 +1,5 @@
 export class Task {
-    id: number;
+    id: string;
     name: string;
     date: number;
     priority: string;
@@ -7,13 +7,13 @@ export class Task {
     status: boolean;
   
     constructor()
-    constructor(id?: number,
+    constructor(id?: string,
                 name?: string,
                 date?: number,
                 priority?: string,
                 category?: string,
                 status?: boolean) {
-      this.id = (id)? id : null;
+      this.id = (id)? id : '';
       this.name = (name)? name : name;
       this.date = (date)? date : null;
       this.priority = (priority)? priority : '';
