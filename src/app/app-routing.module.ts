@@ -30,6 +30,14 @@ const routes: Routes = [
   {
     path: 'historic',
     loadChildren: () => import('./historic/historic.module').then( m => m.HistoricPageModule)
+  },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./favorites/favorites.module').then( m => m.FavoritesPageModule)
+  },
+  {
+    path: 'trash',
+    loadChildren: () => import('./trash/trash.module').then( m => m.TrashPageModule)
   }
 ];
 

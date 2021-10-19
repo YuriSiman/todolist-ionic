@@ -11,9 +11,9 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Favoritos', url: '/folder/Favorites', icon: 'heart' },
+    { title: 'Favoritos', url: '/favorites', icon: 'heart' },
     { title: 'Histórico', url: '/historic', icon: 'archive' },
-    { title: 'Lixeira', url: '/folder/Trash', icon: 'trash' },
+    { title: 'Lixeira', url: '/trash', icon: 'trash' },
     { title: 'Sair', url: '/login', icon: 'log-out' },
   ];
   public labels = ['Pessoal', 'Trabalho', 'Estudos'];
