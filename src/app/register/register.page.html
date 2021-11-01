@@ -9,28 +9,52 @@
        
       </ion-row>
 
+    <form #form="ngForm" [formGroup]="usuarioForm" (submit)="registrar()">
+
       <ion-row class="ion-margin-top">
         <ion-col>
+
+          <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input name="nome" placeholder="Digite seu nome" formControlName="nome"></ion-input>
+
+            <small class="error-message" *ngIf="(usuarioForm.get('nome')?.errors?.required || usuarioForm.get('nome')?.errors?.minlength ||
+            usuarioForm.get('nome')?.errors?.maxlength) && form.submitted">
+              Informe o nome do usuário (6 a 150 caracteres)
+            </small>
+
+          </ion-item>
+
           <ion-item>
             <ion-label position="floating">E-mail</ion-label>
-            <ion-input type="email" name="login" placeholder="Digite seu e-mail"></ion-input>
+            <ion-input type="email" name="login" placeholder="Digite seu e-mail" formControlName="email"></ion-input>
+
+            <small class="error-message" *ngIf="(usuarioForm.get('email')?.errors?.required || usuarioForm.get('email')?.errors?.email) && form.submitted">
+              Informe o e-mail corretamente
+            </small>
+
           </ion-item>
+
           <ion-item>
             <ion-label position="floating">Senha</ion-label>
-            <ion-input type="password" name="password" placeholder="Digite sua senha"></ion-input>
+            <ion-input type="password" name="password" placeholder="Digite sua senha" formControlName="senha"></ion-input>
+
+            <small class="error-message" *ngIf="(usuarioForm.get('senha')?.errors?.required || usuarioForm.get('senha')?.errors?.minlength) && form.submitted">
+              Informe uma senha com pelo menos 6 caracteres
+            </small>
+
           </ion-item>
-          <ion-item>
-            <ion-label position="floating">Confirmar Senha</ion-label>
-            <ion-input type="password" name="confirm-password" placeholder="Confirme sua senha"></ion-input>
-          </ion-item>
+
         </ion-col>
       </ion-row>
 
       <ion-row class="ion-margin-top">
         <ion-col>
-          <ion-button type="button" color="#3B2D59" class="btn-register" expand="full" [routerLink]="['/login']" routerLinkActive="router-link-active" >Registrar</ion-button>
+          <ion-button type="submit" color="#3B2D59" class="btn-register" expand="full">Registrar</ion-button>
         </ion-col>
       </ion-row>
+
+    </form>
 
     </ion-grid>
   </div>
